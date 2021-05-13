@@ -176,8 +176,12 @@ else if (ViewBag.kharid == 2)
                             <p class="txtright">
                                 @item.matnnazar
                             </p>
-                            <button class="ui positive basic button">پاسخ دادن</button>
-                            <a href="/deletenazar?idnazar=@(item.nazaratid)&&iddore=@(item.doreid)"><button class="ui negative basic button">حذف کردن</button></a>
+                            @if (ViewBag.isteacher)
+                            {
+                                <button class="ui positive basic button">پاسخ دادن</button>
+                                <a href="/deletenazar?idnazar=@(item.nazaratid)&&iddore=@(item.doreid)"><button class="ui negative basic button">حذف کردن</button></a>
+
+                            }
                         </div>
                         @foreach (var itema in item.Nazarostads)
                         {

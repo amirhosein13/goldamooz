@@ -227,5 +227,11 @@ namespace datacore
                 return false;
             }
         }
+
+        public bool isteacher(string name)
+        {
+            var a = db.userbombs.FirstOrDefault(u => u.username == name);
+            return a.roleid >= 3;
+        }
     }
 }

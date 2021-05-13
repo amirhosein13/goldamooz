@@ -27,9 +27,11 @@ namespace bomblearn.Controllers
             doreindexpage doreindexpage = new doreindexpage();
             doreindexpage = idore.getdorekamelbyid(Convert.ToInt32(id));
             ViewBag.kharid = tr;
+            ViewBag.isteacher = false;
             if (User.Identity.IsAuthenticated)
             {
                 ViewBag.dastres = paydorea.getkhariddore(User.Identity.Name, Convert.ToInt32(id));
+                ViewBag.isteacher = idore.isteacher(User.Identity.Name);
             }
             ViewData["Title"] = doreindexpage.dorea.dorename;
             ViewData["descripthin"] = doreindexpage.dorea.shortmatn;

@@ -19,6 +19,7 @@ namespace datacore
         bool postftp(string fullnamea, string filenamea);
         List<dore> getdorebynamesearch(string name);
 
+        bool isteacher(string name);
         bool addnazar(nazarat nazarat);
 
         bool addnazarostad(nazarostad nazarostad);
